@@ -8,14 +8,14 @@ layout: default
 
 ## Embedded system
 
-*   Hardware
-*   Software
+####*   Hardware
+####*   Software
 
 ## Connectivity
 
-*   Physical communication techonology
-*   Communication protocol
-*   Application protocol
+####*   Physical communication techonology
+####*   Communication protocol
+####*   Application protocol
 
 ## Data analytic
 
