@@ -2,20 +2,21 @@
 layout: default
 ---
 
+
 # Indentify the basic IoT model.
 
 ## Sensor
 
 ## Embedded system
 
-*   ####Hardware
-*   ####Software
+*   #### Hardware
+*   #### Software
 
 ## Connectivity
 
-*   ####Physical communication techonology
-*   ####Communication protocol
-*   ####Application protocol
+*   #### Physical communication techonology
+*   #### Communication protocol
+*   #### Application protocol
 
 ## Data analytic
 
