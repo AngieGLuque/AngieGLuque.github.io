@@ -2,19 +2,22 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+# Indentify the basic IoT model.
 
-[Back](./).
+## Sensor
 
-There should be whitespace between paragraphs.
+## Embedded system
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+*   Hardware
+*   Software
 
-# Header 1
+## Connectivity
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
+*   Physical communication techonology
+*   Communication protocol
+*   Application protocol
 
-## Header 2
+## Data analytic
 
 > This is a blockquote following a header.
 >
