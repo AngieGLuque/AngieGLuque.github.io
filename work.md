@@ -3,39 +3,45 @@ layout: default
 ---
 
 
-# Indentify the basic IoT model.
+Indentify the basic IoT model.
 
 ## Sensor
 
-BME280
+Sensor de temperatura, presión y humedad BME280
 
 ## Embedded system
 
 *   #### Hardware:
 
-    Raspberry pi 3
+    Placa de desarrollo Raspberry pi 3
     
 *   #### Software:
 
-    b
+    Las diferentes librerías que se usaron son:
+    
+    - Wiring Pi
+    - Azure IoT Device
+    - Azure IoT Device MQTT
+    - BME280 sensor
 
 ## Connectivity
 
 *   #### Physical communication techonology:
 
-    Jumper wires and pin connectors
+    Cables jumper y pines de conexión
     
 *   #### Communication protocol:
 
-    I2C
+    Protocolo I2C
     
 *   #### Application protocol:
 
+    - TCP/IP
     - HTTP
     - SSL
-    - Websockets
+    - Websockets 
 
 ## Data analytic
 
-Azure IoT Hub
+Azure IoT Hub es la plataforma a la que se conecta y comunica nuestro dispositivo IoT
 
