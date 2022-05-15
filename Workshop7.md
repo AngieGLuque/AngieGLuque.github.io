@@ -26,17 +26,33 @@ Sensor de temperatura, presión y humedad BME280
 
 ## Código
 
-*   #### Physical communication techonology:
+```js
+#include <Wire.h>  //Se usa la librería Wire para la comunicación I2C
+#include <DHT.h>    //Se usa la librería DHT para el sensor de temperatura
 
-    Cables jumper y pines de conexión
-    
-*   #### Communication protocol:
+#define DHTPIN 2     // Pin donde está conectado el sensor
 
-    Protocolo I2C
-    
-*   #### Application protocol:
+#define DHTTYPE DHT11   // Se usa el DHT 11
 
-    - TCP/IP
-    - HTTP
-    - SSL
-    - Websockets 
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(9600);           // Iniciar serial
+  Wire.begin(8);                // Iniciar la comunicación I2C en el canal #8
+  Wire.onRequest(requestEvent); // Se especifica la función para peticiones
+  dht.begin();                  // Se inicia la variable del sensor
+}
+
+void loop() {
+  delay(100);
+}
+
+// Esta función se ejecuta cuando el master pide infomación en el canal #8
+// y se especifica como un evento en el setup()
+void requestEvent() {
+  float temperatura = dht.readTemperature(); //Leemos la temperatura en grados Celsius
+  Serial.println(temperatura);
+  Wire.write(int(temperatura)); //Se envía la temperatura en forma de integer            
+}
+```
