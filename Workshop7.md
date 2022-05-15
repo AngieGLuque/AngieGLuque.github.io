@@ -26,7 +26,7 @@ Sensor de temperatura, presión y humedad BME280
 
 ## Código
 
-```js
+```
 #include <Wire.h>  //Se usa la librería Wire para la comunicación I2C
 #include <DHT.h>    //Se usa la librería DHT para el sensor de temperatura
 
