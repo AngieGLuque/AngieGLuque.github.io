@@ -3,13 +3,13 @@ layout: default
 ---
 
 
-Indentify the basic IoT model.
+Comunicación I2C implementado en arduino.
 
-## Sensor
+## Materiales
 
 Sensor de temperatura, presión y humedad BME280
 
-## Embedded system
+## I2C
 
 *   #### Hardware:
 
@@ -24,7 +24,7 @@ Sensor de temperatura, presión y humedad BME280
     - Azure IoT Device MQTT
     - BME280 sensor
 
-## Connectivity
+## Código
 
 *   #### Physical communication techonology:
 
@@ -40,7 +40,3 @@ Sensor de temperatura, presión y humedad BME280
     - HTTP
     - SSL
     - Websockets 
-
-## Data analytic
-
-Azure IoT Hub es la plataforma a la que se conecta y comunica nuestro dispositivo IoT
