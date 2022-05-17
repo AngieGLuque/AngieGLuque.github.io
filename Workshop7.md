@@ -15,7 +15,7 @@ Comunicación I2C implementado en arduino.
 
 ## Esquemático
 
-![Scheme](https://imgur.com/a/nsCTxME))
+![Esquema](https://imgur.com/a/nsCTxME)
 
 ## I2C
 
@@ -115,4 +115,4 @@ En el setup, se inicia la variable del sensor DHT, la comunicación I2C en el ca
 En el loop se actualiza cada 2 segundos la variable de la temperatura, esto porque la librería recomienda mínimo 2 segundos entre lecturas para los sensores DHT11 y DHT22.
 
 ## Video
-https://youtu.be/e_LP6xS40O4
+[Video](https://youtu.be/e_LP6xS40O4)
