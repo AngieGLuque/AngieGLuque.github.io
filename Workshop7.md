@@ -7,24 +7,23 @@ Comunicación I2C implementado en arduino.
 
 ## Materiales
 
-Sensor de temperatura, presión y humedad BME280
+*   Sensor de temperatura DHT11
+*   2 placas de desarrollo arduino (UNO R3 y Mega 2560)
+*   Un diodo LED
+*   Un resistor (1kΩ)
+*   Cables dupont
+
+## Esquemático
+
+
 
 ## I2C
 
-*   #### Hardware:
-
-    Placa de desarrollo Raspberry pi 3
-    
-*   #### Software:
-
-    Las diferentes librerías que se usaron son:
-    
-    - Wiring Pi
-    - Azure IoT Device
-    - Azure IoT Device MQTT
-    - BME280 sensor
+Es un protocolo que se enfoca principalmente en la comunicación de microcontroladores y sistemas embebidos; para esto utiliza dos líneas: SDA y SCL. SDA es la línea que se encarga de los datos y SCL es el reloj. Este protocolo permite una confirmación de los datos recibidos durante el mismo trayecto o trama. Cabe resaltar que para la utilización de este protocolo es necesario saber la cantidad de bytes que va a tener la información que se va a enviar desde el esclavo al maestro.
 
 ## Código
+
+*   ### Maestro:
 
 ```js
 #include <Wire.h> // Se usa la librería Wire para la comunicación I2C
@@ -66,6 +65,13 @@ void loop() {
 }
 ```
 
+En el maestro se declara la librería Wire necesaria para la comunicación I2C, una variable que guardará el valor de la temperatura y una variable dedicada al pin del LED. 
+
+En el setup se inicializa la comunicación I2C sin especificar canal porque así se declara el maestro según la librería, también inicializamos el pin dedicado al LED como salida e inicializamos el puerto serial para imprimir en consola información relevante. 
+
+En el loop, el maestro solicita un byte en el canal 8 (el especificado para el esclavo) y antes de leer la información verifica que en efecto hay información disponible en el canal. Seguidamente hay una condición que se encarga de arreglar el formato para medidas de temperatura negativa (ya que si el sensor mide una temperatura de -1°C, envía un 128 lo que encendería el LED de manera errónea). Y finalmente hay un condicional que se encarga de verificar si la temperatura es menor a 30°C para saber si debe o no encender el LED
+
+*   ### Esclavo:
 
 ```js
 #include <Wire.h> //Se usa la librería Wire para la comunicación I2C
@@ -101,5 +107,12 @@ void requestEvent() {
   Serial.println("send");
 }
 ```
+
+Primero se declaran las librerías necesarias (Wire y DHT). La primera es para la comunicación I2C entre el esclavo y el maestro, y la segunda para el funcionamiento del sensor DHT11. Después se define el pin en donde va a estar conectado el sensor de temperatura y a través de la librería se asigna junto con el tipo de sensor. Finalmente se declara la variable de tipo float que se encargará de almacenar las lecturas de temperatura.
+
+En el setup, se inicia la variable del sensor DHT, la comunicación I2C en el canal 8 y se especifica la función a través de la cual se van a realizar las peticiones. Esta función está encargada de enviar la temperatura como parámetro integer. Además también se inicia el serial para poder imprimir en la consola información relevante del código (como las lecturas de temperatura y un "send" cada que se activa el evento de la función "requestEvent()")
+
+En el loop se actualiza cada 2 segundos la variable de la temperatura, esto porque la librería recomienda mínimo 2 segundos entre lecturas para los sensores DHT11 y DHT22.
+
 ## Video
 https://youtu.be/e_LP6xS40O4
