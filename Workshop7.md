@@ -56,3 +56,5 @@ void requestEvent() {
   Wire.write(int(temperatura)); //Se envía la temperatura en forma de integer            
 }
 ```
+## Video
+https://youtu.be/e_LP6xS40O4
