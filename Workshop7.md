@@ -15,7 +15,7 @@ Comunicación I2C implementado en arduino.
 
 ## Esquemático
 
-![Esquema](https://imgur.com/a/nsCTxME)
+![Esquema](assets/images/esquematico.png)
 
 ## I2C
 
